@@ -102,6 +102,17 @@ export function Location() {
 
             <p className="tabular mt-4 text-[12px] tracking-wide text-stone-500">CNPJ {SITE.cnpj}</p>
           </div>
+
+          <div className="border-t border-stone-200 lg:col-span-2">
+            <iframe
+              title="Mapa: sede da Luvizon em Videira, SC"
+              src={SITE.mapEmbed}
+              className="block h-[300px] w-full border-0 md:h-[380px]"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </section>

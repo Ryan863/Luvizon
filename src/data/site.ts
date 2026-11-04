@@ -31,6 +31,7 @@ export const SITE = {
   instagram: { handle: "@luvizon.arqeng", url: "https://www.instagram.com/luvizon.arqeng" },
   maps: "https://maps.app.goo.gl/noRMDTRSPJbP71Tg7",
   waze: "https://waze.com/ul?q=R.%2019%20de%20Setembro%2C%20618%20Floresta%20Videira%20SC",
+  mapEmbed: "https://www.google.com/maps?q=R.+19+de+Setembro,+618,+Floresta,+Videira+-+SC,+89560-005&hl=pt-BR&z=17&output=embed",
   address: {
     street: "R. 19 de Setembro, 618",
     district: "Floresta",
@@ -115,6 +116,7 @@ export interface Service {
   readonly tag: string;
   readonly span: string;
   readonly tone: "light" | "dark" | "image";
+  readonly image?: { readonly src: string; readonly alt: string };
 }
 
 export const SERVICES: readonly Service[] = [
@@ -127,6 +129,7 @@ export const SERVICES: readonly Service[] = [
     tag: "Arquitetura",
     span: "lg:col-span-4",
     tone: "image",
+    image: { src: "/images/servico-residencial.jpg", alt: "Fachada de casa contemporânea em concreto aparente e madeira" },
   },
   {
     id: "interiores-paisagismo",
@@ -137,6 +140,7 @@ export const SERVICES: readonly Service[] = [
     tag: "Interiores",
     span: "lg:col-span-2",
     tone: "light",
+    image: { src: "/images/servico-interiores.jpg", alt: "Sala de estar com marcenaria sob medida e iluminação indireta" },
   },
   {
     id: "hospitalar-preventivo",
@@ -147,6 +151,7 @@ export const SERVICES: readonly Service[] = [
     tag: "Projetos técnicos",
     span: "lg:col-span-2",
     tone: "light",
+    image: { src: "/images/servico-hospitalar.jpg", alt: "Recepção de clínica moderna com acessibilidade e luz natural" },
   },
   {
     id: "fiscalizacao-obras",
@@ -157,6 +162,7 @@ export const SERVICES: readonly Service[] = [
     tag: "Engenharia",
     span: "lg:col-span-2",
     tone: "dark",
+    image: { src: "/images/servico-obras.jpg", alt: "Estrutura de concreto em obra com projetos sobre a mesa" },
   },
   {
     id: "consultoria",

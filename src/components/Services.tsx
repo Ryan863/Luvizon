@@ -18,17 +18,28 @@ function Card({ s }: { s: Service }) {
     <article
       className={`group relative flex min-h-[300px] flex-col justify-between overflow-hidden rounded-sm border p-7 shadow-[0_18px_40px_-30px_rgba(28,25,23,0.35)] ${surface} ${s.span}`}
     >
-      {image && (
+      {s.image && (dark || image) && (
         <>
           <Image
-            src="/images/hero.jpg"
-            alt=""
+            src={s.image.src}
+            alt={s.image.alt}
             fill
             sizes="(min-width: 1024px) 60vw, 100vw"
             className="object-cover opacity-70 transition-transform duration-700 group-hover:scale-[1.03]"
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/55 to-stone-900/10" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/65 to-stone-900/20" />
         </>
+      )}
+      {s.image && !dark && !image && (
+        <div className="relative -mx-7 -mt-7 mb-6 aspect-[16/9] overflow-hidden">
+          <Image
+            src={s.image.src}
+            alt={s.image.alt}
+            fill
+            sizes="(min-width: 1024px) 30vw, 100vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+        </div>
       )}
 
       <div className="relative">
