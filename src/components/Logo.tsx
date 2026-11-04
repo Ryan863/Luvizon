@@ -27,3 +27,4 @@ export function Logo({ light = false }: { light?: boolean }) {
     </span>
   );
 }
+

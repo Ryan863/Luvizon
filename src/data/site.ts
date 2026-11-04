@@ -261,3 +261,4 @@ export const FAQS: readonly Faq[] = [
     a: "Em geral: documentação do imóvel (matrícula ou escritura), dados do proprietário e do empreendimento, levantamento do local e o alvará ou habite-se existente, quando houver. Os requisitos variam conforme a prefeitura e o Corpo de Bombeiros, e confirmamos a lista exata no primeiro atendimento.",
   },
 ];
+

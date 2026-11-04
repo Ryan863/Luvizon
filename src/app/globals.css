@@ -42,3 +42,4 @@ details > summary::-webkit-details-marker {
 details[open] .faq-icon {
   transform: rotate(45deg);
 }
+

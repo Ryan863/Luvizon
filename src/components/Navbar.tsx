@@ -29,6 +29,7 @@ export function Navbar() {
   }, [open]);
 
   const glass = scrolled || open;
+  const onDark = !glass;
 
   return (
     <header
@@ -44,7 +45,7 @@ export function Navbar() {
       </a>
       <nav aria-label="Principal" className="mx-auto flex h-[68px] max-w-7xl items-center justify-between px-5 md:px-8">
         <a href="#topo" aria-label="Luvizon Arquitetura & Engenharia, início" onClick={() => setOpen(false)}>
-          <Logo />
+          <Logo light={onDark} />
         </a>
 
         <ul className="hidden items-center gap-9 lg:flex">
@@ -52,7 +53,9 @@ export function Navbar() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="text-[13px] font-medium tracking-wide text-stone-700 transition-colors hover:text-[#B45309]"
+                className={`text-[13px] font-medium tracking-wide transition-colors ${
+                  onDark ? "text-stone-100 hover:text-amber-300" : "text-stone-700 hover:text-[#B45309]"
+                }`}
               >
                 {item.label}
               </a>
@@ -65,14 +68,20 @@ export function Navbar() {
             href={CONTACTS.thana.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-full border border-stone-900 px-5 py-2.5 text-[13px] font-semibold text-stone-900 transition-colors hover:bg-stone-900 hover:text-stone-50 sm:inline-flex"
+            className={`hidden items-center gap-2 rounded-full border px-5 py-2.5 text-[13px] font-semibold transition-colors sm:inline-flex ${
+              onDark
+                ? "border-stone-100/70 text-stone-50 hover:bg-stone-50 hover:text-stone-900"
+                : "border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-stone-50"
+            }`}
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
             Iniciar Projeto
           </a>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-stone-900 lg:hidden"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full lg:hidden ${
+              onDark ? "text-stone-50" : "text-stone-900"
+            }`}
             aria-expanded={open}
             aria-controls="menu-mobile"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -139,3 +148,4 @@ export function Navbar() {
     </header>
   );
 }
+

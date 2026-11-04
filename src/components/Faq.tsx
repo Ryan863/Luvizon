@@ -39,3 +39,4 @@ export function FaqSection() {
     </section>
   );
 }
+
