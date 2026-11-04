@@ -32,6 +32,7 @@ export function Navbar() {
   const onDark = !glass;
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         glass ? "border-b border-stone-200/50 bg-[#F8F7F4]/90 backdrop-blur-md" : "border-b border-transparent bg-transparent"
@@ -91,12 +92,13 @@ export function Navbar() {
           </button>
         </div>
       </nav>
+      </header>
 
-      {/* Drawer mobile */}
+      {/* Drawer mobile: fora do <header> porque o backdrop-blur cria um containing block e quebra o position: fixed */}
       <div
         id="menu-mobile"
         hidden={!open}
-        className="fixed inset-x-0 top-[68px] bottom-0 overflow-y-auto bg-[#F8F7F4] px-5 pb-10 pt-6 lg:hidden"
+        className="fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto bg-[#F8F7F4] px-5 pb-10 pt-6 lg:hidden"
       >
         <ul className="divide-y divide-stone-200">
           {NAV.map((item) => (
@@ -145,7 +147,7 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
 
